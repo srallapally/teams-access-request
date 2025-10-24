@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Approve Access Request</title>
+    <script src="https://res.cdn.office.net/teams-js/v2.17.0/js/MicrosoftTeams.min.js" defer></script>
+    <script type="module" src="/assets/taskModules/approve.js" defer></script>
+      <script>
+      window.__APP_CONFIG__ = {
+        resourceId: '<APP_ID_URI>'
+      };
+    </script>
+  </head>
+  <body>
+    <div id="task-module">
+      <header>
+        <h1>Access Request Review</h1>
+        <p>Reviewer: <span id="approver-name">loading…</span></p>
+      </header>
+      <section>
+        <h2>Request Details</h2>
+        <p><strong>Resource:</strong> <span id="request-resource"></span></p>
+        <p><strong>Justification:</strong> <span id="request-justification"></span></p>
+        <p><strong>Requested by:</strong> <span id="request-requester"></span></p>
+      </section>
+      <section>
+        <h2>Decision</h2>
+        <label>
+          Comment
+          <textarea id="approver-comment"></textarea>
+        </label>
+        <div class="actions">
+          <button id="approve-button" type="button">Approve</button>
+          <button id="reject-button" type="button">Reject</button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

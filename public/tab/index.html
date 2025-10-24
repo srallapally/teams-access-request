@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Access Requests</title>
+    <script src="https://res.cdn.office.net/teams-js/v2.17.0/js/MicrosoftTeams.min.js" defer></script>
+    <script type="module" src="/assets/web/tab.js" defer></script>
+      <script>
+      window.__APP_CONFIG__ = {
+        resourceId: '<APP_ID_URI>',
+        externalApiBaseUrl: '<OPTIONAL_EXTERNAL_API_BASE_URL>'
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Access Requests</h1>
+      <p>Signed in as <span id="user-name">loading…</span></p>
+      <button id="external-auth-button" type="button" hidden>Connect External System</button>
+    </header>
+    <main>
+      <section>
+        <h2>Create Request</h2>
+        <form id="create-request-form">
+          <label>
+            Resource
+            <input name="resource" required />
+          </label>
+          <label>
+            Justification
+            <textarea name="justification" required></textarea>
+          </label>
+          <label>
+            Approver AAD Object ID
+            <input name="approverId" required />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <section>
+        <h2>My Requests</h2>
+        <ul id="my-requests"></ul>
+      </section>
+      <section>
+        <h2>My Approvals</h2>
+        <ul id="my-approvals"></ul>
+      </section>
+    </main>
+  </body>
+</html>
