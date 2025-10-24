@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.17",
+  "version": "1.0.0",
+  "id": "00000000-0000-0000-0000-000000000000",
+  "packageName": "com.contoso.accessrequest",
+  "developer": {
+    "name": "<APP_NAME>",
+    "websiteUrl": "<BASE_URL>",
+    "privacyUrl": "<BASE_URL>/privacy",
+    "termsOfUseUrl": "<BASE_URL>/terms"
+  },
+  "name": {
+    "short": "<APP_NAME>",
+    "full": "<APP_NAME>"
+  },
+  "description": {
+    "short": "Access request approvals for Teams",
+    "full": "Access request workflow with Teams tab, task modules, and activity feed notifications"
+  },
+  "accentColor": "#6264A7",
+  "staticTabs": [
+    {
+      "entityId": "accessRequests",
+      "name": "Access Requests",
+      "contentUrl": "<BASE_URL>/tab/index.html",
+      "websiteUrl": "<BASE_URL>/tab/index.html",
+      "scopes": ["personal"]
+    }
+  ],
+  "configurableTabs": [
+    {
+      "configurationUrl": "<BASE_URL>/tab/configure.html",
+      "canUpdateConfiguration": true,
+      "scopes": ["team"]
+    }
+  ],
+  "validDomains": ["<DOMAIN>"],
+  "webApplicationInfo": {
+    "id": "<CLIENT_ID>",
+    "resource": "<APP_ID_URI>"
+  },
+  "permissions": ["identity", "messageTeamMembers"],
+  "devicePermissions": ["media", "geolocation"],
+  "activities": {
+    "activityTypes": [
+      {
+        "type": "accessRequestApproval",
+        "description": "Notify approvers of pending access requests",
+        "templateText": "{{description}}"
+      }
+    ]
+  }
+}
